@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng hồ đếm ngược</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(246, 209, 246);
+        }
+
+        #dong_ho h2 {
+            position: relative;
+            display: block;
+            color: rgba(0, 0, 0, 0.829);
+            text-align: center;
+            margin: 10px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+        }
+
+        #dong_ho #thoi_gian {
+            display: flex;
+        }
+
+        #dong_ho #thoi_gian div {
+            position: relative;
+            margin: 0 5px;
+        }
+
+        #dong_ho #thoi_gian div span {
+            position: relative;
+            display: block;
+            width: 150px;
+            height: 80px;
+            background: rgb(243, 164, 243);
+            color: #fff;
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            /* z-index: 3; */
+            /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); */
+        }
+
+        #dong_ho #thoi_gian span:nth-child(2) {
+            height: 65px;
+            font-size: 2rem;
+            letter-spacing: 0.3rem;
+            z-index: 2;
+            box-shadow: none;
+            background: rgb(246, 149, 246);
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <!-- <img src="./ga.gif" alt=""> -->
+    <div id="dong_ho">
+        <h2>Thời gian bây giờ là:</h2>
+        <div id="thoi_gian">
+            <div>
+                <span id="gio">00</span><span>Hours</span>
+            </div>
+            <div>
+                <span id="phut">00</span><span>Minute</span>
+            </div>
+            <div>
+                <span id="giay">00</span><span>second</span>
+            </div>
+        </div>
+        <div id="ga"></div>
+    </div>
+    <br>
+</body>
+<script>
+    function mytime() {
+        let date = new Date()
+
+        let hours = 24 - date.getHours()
+        let minute = 60 - date.getMinutes()
+        let second = 60 - date.getSeconds()
+
+        let gio = document.getElementById("gio")
+        let phut = document.getElementById("phut")
+        let giay = document.getElementById("giay")
+
+        gio.innerHTML = hours
+        phut.innerHTML = minute
+        giay.innerHTML = second
+    }
+    setInterval(mytime, 1000)
+    let image = document.createElement("img")
+    function chicken() {
+        image.src = "./5eeea355389655.59822ff824b72.gif"
+        image.width = Math.floor(Math.random() * 300) ;
+        image.style.marginTop = Math.floor(Math.random() * 300) + "px"
+        let body = document.getElementById("ga")
+        body.appendChild(image)
+    }
+    function clear() {
+        clearInterval(interval)
+    }
+    let interval = setInterval(chicken, 1000)
+    
+
+</script>
+
+</html>
