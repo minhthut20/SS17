@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <a id="gg" href="https://www.google.com/?client=safari&channel=mac_bm.vn/"></a>
+    <a id="fb" href="https://www.facebook.com"></a> -->
+
+<!-- 
+    <h3>Danh sách cầu thủ</h3>
+    <ul id="list">
+        <li>Ronandinho</li>
+    </ul> -->
+
+    <h3>Danh sách cầu thủ</h3>
+    <ul id="list">
+        <li>Ronaldo</li>
+        <li>Messi</li>
+        <li>Neymar</li>
+    </ul>
+    <!-- <button id="btn">Click to add new player</button> -->
+
+    <input id="name" type="text">
+    <input type="submit" value="Submit">
+</body>
+ <script>
+    // let a = document.getElementById("gg");
+    // let b = document.getElementById("fb");
+    // b.innerHTML = a;
+
+
+    // let a = document.getElementById("list");
+    // let li1 = '<li>Messi</li>'
+    // let li2 = '<li>Ronaldo</li>'
+    // let li3 = '<li id= "neymar">Neymar</li>'
+    // a.innerHTML += li1 + li2 +li3;
+
+    // let nm = document.getElementById("neymar")
+    // nm.remove()
+
+    // let btn = document.getElementById("btn");
+    // let a = document.getElementById("list");
+    // btn.addEventListener('click', function() {
+    //     let li4 = '<li> Kante </li>'
+    //     a.innerHTML += li4;
+    // }) 
+
+    let myInput = document.getElementById("name");
+    let ul = document.getElementById("list");
+    myInput.addEventListener('keypress', function(datakey){
+       if(datakey.key === 'Enter') {
+        let newList = '<li>'+ myInput.value +'</li>'
+        ul.innerHTML += newList;
+        myInput.value = '';
+       }
+    })
+</script>
+</html>
